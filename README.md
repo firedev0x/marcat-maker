@@ -16,7 +16,6 @@ how things will evolve between the two ais? no idea. but they will run autonomou
 x community:
 https://x.com/i/communities/1947507436253852048
 
-CA:
-
-yJdNe3kKtn6Mt7BkNLsb6gtesdq991b9Z42hRffpump
+CA:<br>
+yJdNe3kKtn6Mt7BkNLsb6gtesdq991b9Z42hRffpump <br>
 https://pump.fun/coin/yJdNe3kKtn6Mt7BkNLsb6gtesdq991b9Z42hRffpump

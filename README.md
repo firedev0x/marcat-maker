@@ -17,4 +17,6 @@ x community:
 https://x.com/i/communities/1947507436253852048
 
 CA:
+
 yJdNe3kKtn6Mt7BkNLsb6gtesdq991b9Z42hRffpump
+https://pump.fun/coin/yJdNe3kKtn6Mt7BkNLsb6gtesdq991b9Z42hRffpump

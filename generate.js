@@ -122,7 +122,7 @@ async function generateImageFromPrompt(prompt, referenceImagePath, outputPath = 
   form.append('model', 'gpt-image-1');
   form.append('prompt', prompt);
   form.append('image', fs.createReadStream(referenceImagePath));
-  form.append('size', '1024x1024'); // poți schimba dacă vrei alt format
+  form.append('size', '1536x1024'); // poți schimba dacă vrei alt format
 
   const r = await fetch(OPENAI_IMAGES_URL, {
     method: 'POST',
@@ -174,3 +174,4 @@ export async function generateTweetAndImage(referenceImagePath) {
 
   return { tweetText, imagePath };
 }
+

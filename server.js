@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import { TwitterApi } from 'twitter-api-v2';
-import { generateGokeLine } from './generate.js';
+import { generateTweetAndImage } from './grok-image.js'; // noul fișier
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,11 +14,33 @@ const client = new TwitterApi({
   accessSecret: process.env.X_ACCESS_SECRET,
 });
 
+// conexiune media v1.1 (obligatoriu pentru imagini)
+const rwClient = client.readWrite;
+
+// funcția modernizată pentru un singur post
 async function postOnce() {
-  const text = await generateGokeLine();
-  if (!text || text.length < 5) throw new Error('draft gol sau prea scurt');
-  const res = await client.v2.tweet(text);
-  return { id: res?.data?.id, text };
+  // 1) generăm tweet + imagine
+  const referenceImagePath = './assets/character.png'; // schimbă dacă e nevoie
+  const { tweetText, imagePath } = await generateTweetAndImage(referenceImagePath);
+
+  if (!tweetText || tweetText.length < 5) {
+    throw new Error('Tweet gol sau prea scurt');
+  }
+
+  // 2) încărcăm imaginea
+  const mediaId = await rwClient.v1.uploadMedia(imagePath);
+
+  // 3) postăm tweet-ul cu media
+  const res = await rwClient.v2.tweet({
+    text: tweetText,
+    media: { media_ids: [mediaId] }
+  });
+
+  return {
+    id: res?.data?.id,
+    text: tweetText,
+    image: imagePath
+  };
 }
 
 // healthcheck simplu

@@ -13,9 +13,6 @@ that post is then sent to ChatGPT, which generates the perfect image using the m
 
 how things will evolve between the two ais? no idea. but they will run autonomously with zero human intervention.
 
-the code is on github.
-https://github.com/firedev0x/marcat-maker
-
 x community:
 https://x.com/i/communities/1947507436253852048
 

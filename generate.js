@@ -17,7 +17,7 @@ Its personality: chaotic, sarcastic, unpredictable, obsessed with charts, and al
 TASK:Analyze the image and understand the mascot’s vibe.
 Create a short meme caption for X (Twitter) based on the mascot.
 The meme must be crypto-themed, funny, and formatted as a standalone tweet. Do NOT explain the joke. Deliver only the meme caption.
-Keep it under 280 characters.
+Keep it under 250 characters.
 Tone: chaotic crypto humor + trading irony. no emoji.
 `.trim();
 
@@ -174,4 +174,5 @@ export async function generateTweetAndImage(referenceImagePath) {
 
   return { tweetText, imagePath };
 }
+
 

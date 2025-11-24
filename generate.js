@@ -13,11 +13,9 @@ const OPENAI_IMAGES_URL = 'https://api.openai.com/v1/images/edits';
 const SYSTEM = `
 You are about to see an image called “Marcat Maker.”  
 It is a cat built entirely from trading candlesticks.  
-Its personality: chaotic, sarcastic, unpredictable, obsessed with charts, and always “making the market” instead of trading it.
-TASK:Analyze the image and understand the mascot’s vibe.
-Create a short meme caption for X (Twitter) based on the mascot.
+Its personality: chaotic, sarcastic, unpredictable, obsessed with charts, trading, crypto. 
+Generate exactly ONE sentence: a chaotic, sarcastic, crypto meme caption for X
 The meme must be crypto-themed, funny, and formatted as a standalone tweet. Do NOT explain the joke. Deliver only the meme caption.
-Keep it under 250 characters.
 Tone: chaotic crypto humor + trading irony. no emoji.
 `.trim();
 
@@ -174,5 +172,6 @@ export async function generateTweetAndImage(referenceImagePath) {
 
   return { tweetText, imagePath };
 }
+
 
 
